@@ -19,8 +19,8 @@
                     </template>
                 </v-expansion-panel-title>
             <v-expansion-panel-text class="ma-0 bg-surface-variant ">
-                <v-container class="w-100 pl-5 d-flex flex-wrap justify-left align-center">
-                    <v-sheet v-for="i in 8" :elevation="24" :height="185" :width="185" class="ma-5" rounded></v-sheet>
+                <v-container class="w-100 ml-3 my-3 pl-0 d-flex flex-wrap justify-left align-center">
+                    <v-sheet v-for="i in 8" :elevation="24" :height="143" :width="143" class="ma-2 rounded-lg"></v-sheet>
                 </v-container>
             </v-expansion-panel-text>
             </v-expansion-panel>
@@ -34,10 +34,7 @@
 <script setup lang="ts">
 const variants = ['Playlists', 'Artists', 'Albums', 'Tracks'] as const;
 const subheadings = ['Choose which playlists you\'d like to sync', 'Choose which artists to "like" on Tidal', 'Choose which albums to "like" on Tidal', 'Choose which tracks to "like" on Tidal'] as const;
-const opened = ([1, 2, 3, 4]);
-
-
-        const allOpenPanels = ref([0, 1, 2, 3]);
+const allOpenPanels = ref([0, 1, 2, 3]);
 
 </script>
 

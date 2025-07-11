@@ -5,6 +5,7 @@ import Fonts from 'unplugin-fonts/vite'
 import Layouts from 'vite-plugin-vue-layouts-next'
 import Vue from '@vitejs/plugin-vue'
 import VueRouter from 'unplugin-vue-router/vite'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
@@ -15,6 +16,7 @@ import { fileURLToPath, URL } from 'node:url'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    basicSsl(),
     VueRouter({
       dts: 'src/typed-router.d.ts',
     }),
@@ -94,5 +96,5 @@ export default defineConfig({
         api: 'modern-compiler',
       },
     },
-  },
+  }
 })

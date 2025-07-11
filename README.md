@@ -79,3 +79,52 @@ This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library wi
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2016-present Vuetify, LLC
+
+## Spotify OAuth Setup
+
+To enable Spotify authentication in your app, follow these steps:
+
+### 1. Create a Spotify App
+
+1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Log in with your Spotify account
+3. Click "Create an App"
+4. Fill in the app name and description
+5. Accept the terms and create the app
+
+### 2. Configure Your App
+
+1. In your app dashboard, click on "Settings"
+2. Add the following redirect URI:
+   - For development: `http://localhost:5173/callback`
+   - For production: `https://yourdomain.com/callback`
+3. Copy your Client ID and Client Secret
+
+### 3. Environment Variables
+
+1. Copy `.env.local` file in the project root
+2. Add your Spotify credentials:
+
+```env
+VITE_SPOTIFY_CLIENT_ID=your_spotify_client_id_here
+VITE_SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
+VITE_SPOTIFY_REDIRECT_URI=http://localhost:5173/callback
+```
+
+### 4. Available Scopes
+
+The app requests the following Spotify permissions:
+- `user-read-currently-playing` - Read currently playing track
+- `user-read-playback-state` - Read playback state
+- `user-modify-playback-state` - Control playback
+- `user-read-recently-played` - Read recently played tracks
+- `playlist-read-private` - Access private playlists
+- `playlist-read-collaborative` - Access collaborative playlists
+- `playlist-modify-public` - Modify public playlists
+- `playlist-modify-private` - Modify private playlists
+
+### 5. Security Notes
+
+- Never commit your `.env.local` file to version control
+- Use environment variables for production deployment
+- Consider using a backend service for storing sensitive credentials in production
